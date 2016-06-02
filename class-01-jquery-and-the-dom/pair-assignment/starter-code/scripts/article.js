@@ -4,11 +4,17 @@ function Article (opts) {
   // TODO: Use the js object passed in to complete this contructor function:
   // Save ALL the properties of `opts` into `this`.
   this.author = opts.author;
+  this.publishedOn = opts.publishedOn;
+  this.title = opts.title;
+  this.category = opts.category;
+  this.body = opts.body;
+  this.authorUrl = opts.authorUrl;
 }
 
 Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
-
+  //selecting article with a class of template then creates a copy of it.
+  //take cloned blob and fill in different attributes and content of that blob.
   $newArticle.attr('data-category', this.category);
 
   // TODO: Use jQuery to fill in the template with properties

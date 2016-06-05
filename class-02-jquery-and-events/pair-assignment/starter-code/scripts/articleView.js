@@ -50,11 +50,23 @@ articleView.handleAuthorFilter = function() {
 };
 
 articleView.handleCategoryFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      var categoryVal = $(this).val();
+      $('article').hide();
+      $('article[data-category="' + categoryVal + '"]').show();
   // TODO: Just like we do for #author-filter above, we should handle change events on the #category-filter element.
   //       When an option with a value is selected, hide all the articles, then reveal the matches.
   //       When the blank (default) option is selected, show all the articles, except for the template.
   //       Be sure to reset the #author-filter while you are at it!
 
+    } else {
+      if ($(this).val() === '') {
+        $('article').show();
+      };
+    };
+    $('#author-filter').val('');
+  });
 };
 
 articleView.handleMainNav = function() {

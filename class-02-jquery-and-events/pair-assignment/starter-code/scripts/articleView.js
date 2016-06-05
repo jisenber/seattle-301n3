@@ -27,7 +27,7 @@ articleView.populateFilters = function() {
 };
 
 articleView.handleAuthorFilter = function() {
-  $('#author-filter').on('change', function () {
+  $('#author-filter').on('change', function() {
     if ($(this).val()) {
       var authorVal = $(this).val();
       $('article').hide();
@@ -39,9 +39,11 @@ articleView.handleAuthorFilter = function() {
       //       Use an "attribute selector" to find those articles, and fade them in for the reader.
 
     } else {
+      if ($(this).val() === '') {
+        $('article').show();
+      };
       // TODO: If the select box was changed to an option that is blank, we should
       //       show all the articles, except the one article we are using as a template.
-
     }
     $('#category-filter').val('');
   });
@@ -61,7 +63,7 @@ articleView.handleMainNav = function() {
   //       single .tab-content section that is associated with the clicked .tab element.
   //       So: You need to dynamically build a selector string with the correct ID, based on the
   //       data available to you on the .tab element that was clicked.
-  $('.main-nav').on(/* CODE GOES HERE */);
+  $('.main-nav').on( /* CODE GOES HERE */ );
 
   $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
 };

@@ -2,6 +2,8 @@
 
 .site-header {
   padding: .1em;
+  background-color: #2196F3;
+  color: #FFFFFF;
 }
 
 .main-nav {
@@ -24,8 +26,14 @@
   padding: 0;
 }
 
-#filters select {
+@media only screen and (min-width:360px) and (max-width:480px) {
+  #author-filter, #category-filter {
+    width: 100%;
+  }
+}
 
+#filters select {
+  list-style-type: none;
 }
 
 .template {

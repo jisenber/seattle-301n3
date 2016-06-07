@@ -17,6 +17,7 @@
   font-size: 1.5em;
   padding: .5em .2em;
   border-bottom: 1px solid #ccc;
+  list-style-type: none;
 }
 
 /* TODO: Style the filters so they look good on small screens:

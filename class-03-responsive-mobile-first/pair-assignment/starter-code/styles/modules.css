@@ -59,12 +59,15 @@
     display: none;
   }
   .main-nav ul {
-    display: inline;
-    padding: 3em;
+    display: flex;
+    padding: 1em;
+    clear: both;
+    margin: 0;
   }
   .main-nav:hover ul {
-    display: inline;
+    display: flex;
   }
+
 }
 
 /* TODO: Now add styles for how things should look on a larger screen:

@@ -25,7 +25,6 @@ Article.prototype.toHtml = function() {
   var source = $('#article-template').html();
   var template = Handlebars.compile(source);
   var store = template(this);
-  console.log('me too!');
   return store;
 };
 
@@ -39,5 +38,4 @@ rawData.forEach(function(ele) {
 
 articles.forEach(function(a) {
   $('#articles').append(a.toHtml());
-  console.log('works!');
 });

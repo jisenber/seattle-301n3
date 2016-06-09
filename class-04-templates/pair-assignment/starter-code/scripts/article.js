@@ -23,15 +23,8 @@ Article.prototype.toHtml = function() {
   //   For example, you might want to display how old a post is, or say "(draft)" if it has no publication date:
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
   var source = $('#article-template').html();
-  var context = {
-    data: rawData,
-    daysAgo: this.daysAgo,
-    publishStatus: this.publishStatus
-  };
-  console.log(context.data);
   var template = Handlebars.compile(source);
-  var store = template(context);
-  console.log('me too!');
+  var store = template(this);
   return store;
 };
 
@@ -45,5 +38,4 @@ rawData.forEach(function(ele) {
 
 articles.forEach(function(a) {
   $('#articles').append(a.toHtml());
-  console.log('works!');
 });

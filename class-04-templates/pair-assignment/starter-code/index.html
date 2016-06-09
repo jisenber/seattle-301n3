@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <script id = "article-template" type="text/x-handlebars-template">
-      {{#each data}}
         <article data-category="cat">
           <header>
             <h1>{{title}}</h1>
@@ -22,7 +21,6 @@
           <section class="article-body">{{{body}}}</section>
           <a href="#" class="read-on">Read on &rarr;</a>
         </article>
-      {{/each}}
       </script>
     <!--
       TODO: Add a script tag to hold the Handlebars template.

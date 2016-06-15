@@ -17,10 +17,16 @@ Article.prototype.toHtml = function() {
 
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+<<<<<<< HEAD
   // TODO: Parse the body content through the markdown library api to render any markdown within a new blog article
 this.body = marked(this.body);
   return template(this); /*when we run the toHtml() function, it will take the script
   and will then will render that specific instance*/
+=======
+  this.body = marked(this.body);
+
+  return template(this);
+>>>>>>> 24880cc7bbb74a7874c23cf274f60219dc2a4d1d
 };
 
 if (typeof rawData !== 'undefined') {

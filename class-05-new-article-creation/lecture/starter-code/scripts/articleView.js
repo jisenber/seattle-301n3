@@ -63,6 +63,12 @@ articleView.handleMainNav = function() {
   $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
 };
 
+articleView.toggleNavDisplay = function() {
+  $('.icon-menu').on('click', function(e) {
+    $('.main-nav ul').toggle();
+  });
+};
+
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any artcile body.
 
@@ -148,5 +154,6 @@ articleView.initIndexPage = function() {
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
+  articleView.toggleNavDisplay();
   articleView.setTeasers();
 };

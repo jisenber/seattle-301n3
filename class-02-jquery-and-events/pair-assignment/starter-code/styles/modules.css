@@ -2,6 +2,8 @@
 
 .site-header {
   padding: .1em;
+  background-color: #2196F3;
+  color: #FFFFFF;
 }
 
 .main-nav {
@@ -15,6 +17,7 @@
   font-size: 1.5em;
   padding: .5em .2em;
   border-bottom: 1px solid #ccc;
+  list-style-type: none;
 }
 
 /* TODO: Style the filters so they look good on small screens:
@@ -24,8 +27,14 @@
   padding: 0;
 }
 
-#filters select {
+@media only screen and (min-width:360px) and (max-width:480px) {
+  #author-filter, #category-filter {
+    width: 100%;
+  }
+}
 
+#filters select {
+  list-style-type: none;
 }
 
 .template {

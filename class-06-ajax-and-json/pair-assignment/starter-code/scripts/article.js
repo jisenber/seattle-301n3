@@ -48,10 +48,21 @@ Article.fetchAll = function() {
     // When rawData is already in localStorage,
     // we can load it by calling the .loadAll function,
     // and then render the index page (using the proper method on the articleView object).
-    Article.loadAll(//TODO: What do we pass in here to the .loadAll function?
+    Article.loadAll(rawData//TODO: What do we pass in here to the .loadAll function?
     );
-    articleView.someFunctionToCall//(); //TODO: Change this fake method call to the correct one that will render the index page.
+    articleView.initIndexPage()//(); //TODO: Change this fake method call to the correct one that will render the index page.
   } else {
+      $.getJSON('data/ipsumArticles.json', function(data) {
+        Article.loadAll(data);
+        var stringData = JSON.stringify(data);
+        localStorage.setItem('articles', stringData);
+        articleView.initIndexPage();
+      });
+      // var parseData = JSON.parse(data)
+      // //.done(Article.loadAll(data));
+      // stringData = JSON.stringify(data);
+      // localStorage.setItem('stringData', stringData);
+
     // TODO: When we don't already have the rawData, we need to:
     // 1. Retrieve the JSON file from the server with AJAX (which jQuery method is best for this?),
 
@@ -63,3 +74,7 @@ Article.fetchAll = function() {
 
   }
 }
+
+// $(function () {
+//   Article.fetchAll();
+// })

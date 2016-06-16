@@ -53,8 +53,9 @@ articleView.handleMainNav = function() {
 };
 
 articleView.toggleNavDisplay = function() {
-  //TODO: once you've added your hamburger menu icon, add an event handler to hide/show
-  //the nav menu when the icon is clicked
+  $('.icon-menu').on('click', function(e) {
+    $('.main-nav ul').toggle();
+  });
 };
 
 articleView.setTeasers = function() {
@@ -67,11 +68,43 @@ articleView.setTeasers = function() {
   });
 };
 
-$(document).ready(function() {
+articleView.initNewArticlePage = function() {
+  // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later.
+
+  // TODO: Any new article we create will be copy/pasted into our source data file.
+  // Set up this "export" functionality. We can hide it for now, and show it once we
+  // have data to export. Also, let's add a focus event to help us select and copy the
+  // resulting JSON.
+
+  // TODO: Add an event handler to update the preview and the export field if any inputs change.
+};
+
+articleView.create = function() {
+  // TODO: Set up a var to hold the new article we are creating.
+  // Clear out the #articles element, so we can put in the updated preview
+
+  // TODO: Instantiate an article based on what's in the form fields:
+
+  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+
+  // TODO: Activate the highlighting of any code blocks (ex:
+  /*
+  ```
+  function example() {
+    return 'Hooray! Code highlighting!';
+  }
+  ```
+  */
+
+  // TODO: Export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+};
+
+
+articleView.initIndexPage = function() {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.toggleNavDisplay();
   articleView.setTeasers();
-})
+};

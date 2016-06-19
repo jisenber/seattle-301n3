@@ -1,5 +1,12 @@
 # Assignment for Class 8 - Intro to SQL
 
+# Daily Plan
+- Code Review [Dan]
+- Models overview [Scott]
+- SQL [Scott]
+- Assignment Review (abstraction of DB) [Scott]
+
+
 Databases power web applications everywhere by enabling them to persist, modify, and query datasets to great effect. While there are many types of database options available now, Structured Query Language (SQL) remains the de facto standard for communicating with relational database systems. Let's build some SQL skills!
 
 ## Useful resources.

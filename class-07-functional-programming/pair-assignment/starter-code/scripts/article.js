@@ -81,7 +81,7 @@ Article.allAuthors = function() {
      }
       return a;
      }, []);
-}
+};
 
 Article.numWordsByAuthor = function() {
   // TODO: Transform each author string into an object with 2 properties: One for

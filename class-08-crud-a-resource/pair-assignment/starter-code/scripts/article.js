@@ -4,7 +4,7 @@
     // of `opts` will be assigned as properies of the newly created article object.
     Object.keys(opts).forEach(function(e, index, keys) {
       this[e] = opts[e];
-    },this);
+    },this); //this last 'this' hands the scope to the Article function.
   }
 
   Article.all = [];
@@ -21,9 +21,9 @@
 
   // TODO: Set up a DB table for articles.
   Article.createTable = function(callback) {
-    webDB.execute(
+    webDB.execute(//below is the function that serves as the 'sql' argument in the webDB function
       'CREATE table IF NOT EXISTS articles (id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, category VARCHAR, author VARCHAR, authorUrl VARCHAR, publishedOn DATE, body VARCHAR);', // what SQL command do we run here inside these quotes?
-      function(result) {
+      function(result) {//below is the function that serves as the 'callback' function in the webDB function
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
       }
@@ -58,7 +58,8 @@
     webDB.execute(
       [
         {
-          'sql': 'DELETE from articles WHERE id = 5'
+          'sql': 'DELETE FROM articles WHERE id = ?;',
+          'data': [this.id],
         }
       ],
       callback
@@ -70,7 +71,8 @@
     webDB.execute(
       [
         {
-          'sql': 'UPDATE articles SET title = "Jacob, Jonathan, and Geoff are the best!" WHERE id = 2'
+          'sql': 'UPDATE articles SET title = ?, category = ?, author = ?, authorUrl = ?, publishedOn = ?, body = ?, WHERE id = ?;',
+          'data': [this.title, this.category, this.author, this. authorUrl, this.publishedOn, this.body, this.id],
         }
       ],
       callback

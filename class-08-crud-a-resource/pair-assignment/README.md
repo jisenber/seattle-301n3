@@ -11,16 +11,15 @@ Crucially, you'll need to trace through the app logic, and all those callback fu
 
 Look through the TODOs, which signify areas of the code with varying levels of completeness, and focus initially on writing correct SQL. Practice in the web inspector.
 
-There is no portfolio assignment.
+**There is no portfolio assignment.**
 
 ## User Stories: Stretch Goals
- - As an author, I want to load an existing article in the editor with a special URL (editor/articles.html?id=42), so that I can see each component in a form.
- - As an author, I want to save and export my edits to existing articles, so that my changes persist.
- - As an author, I want an admin mode with an edit link on each article (index.html?admin=password).
- - As an author, I want to have draft posts, so that I can save my writing without publishing.
+- As a developer, I want article data to persist with SQL, so that I can store more, faster and have more query flexibility.
+- As an author, I want to save and export my edits to existing articles, so that my changes persist.
+- As an author, I want to have draft posts, so that I can save my writing without publishing.
 
 ## Technical Requirements and Grading Rubric
  - Keep your code linted, as you work. Clean up all concerns before submitting.
  - Continue to make good use of SMACSS principles.
- - Utilize webSQL (the via provided `webDB` wrapper) to load and store articles information
+ - Utilize the webSQL layer (via the provided `webDB` wrapper) to load and store articles information
  - Import the data into WebSQL from your JSON source.

@@ -14,9 +14,9 @@
   <body>
     <header>
       <section>
-        <form>
+        <form id = 'zipForm'>
           <label for="zip">Select a Zip</label>
-          <input type="text" name="zip">
+          <input type="text" name="zip" id="zipInput">
           <input type="submit" value="Search">
         </form>
       </section>
@@ -26,7 +26,7 @@
           <option value="state">Select a State</option>
         </select>
         <select id="city-select">
-          <option value="city">Select a City</option>
+          <option value="city" id="citySelect">Select a City</option>
         </select>
       </section>
     </header>
@@ -40,8 +40,7 @@
     <script type="text/javascript" src='scripts/loadDB.js'></script>
     <script type="text/javascript" src='scripts/map.js'></script>
     <!-- TODO: Create an API Key (linked in the README) and populate the script below where it says 'API_KEY_HERE'-->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap" async defer></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-8sT1nMH3k2oWC823OkHJZriM3WKZjdQ&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx9zEkydk8R-5WcYq20ZJCAwZqzE8wduY&callback=initMap" async defer></script>
     <script type="text/javascript">
       zips.loadDB();
     </script>

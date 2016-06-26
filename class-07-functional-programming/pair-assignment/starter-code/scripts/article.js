@@ -1,4 +1,4 @@
-// TODO: Wrap the entire contents of this file in an IIFE.
+(function(module) { // TODO: Wrap the entire contents of this file in an IIFE.
 // Pass in to the IIFE a module, upon which objects can be attached for later access.
 function Article (opts) {
   this.author = opts.author;
@@ -44,15 +44,17 @@ Article.loadAll = function(rawData) {
 // to execute once the loading of articles is done. We do this because we might want
 // to call other view functions, and not just this initIndexPage() that we are replacing.
 // Now, instead of calling articleView.initIndexPage(), we can simply run our callback.
-Article.fetchAll = function() {
+Article.fetchAll = function(callback) {
   if (localStorage.rawData) {
     Article.loadAll(JSON.parse(localStorage.rawData));
-    articleView.initIndexPage();
+    callback();
+    //articleView.initIndexPage();
   } else {
     $.getJSON('/data/hackerIpsum.json', function(rawData) {
       Article.loadAll(rawData);
       localStorage.rawData = JSON.stringify(rawData); // Cache the json, so we don't need to request it next time.
-      articleView.initIndexPage();
+      callback();
+      //articleView.initIndexPage();
     });
   }
 };
@@ -60,24 +62,61 @@ Article.fetchAll = function() {
 // TODO: Chain together a `map` and a `reduce` call to get a rough count of all words in all articles.
 Article.numWordsAll = function() {
   return Article.all.map(function(article) {
-    return // Get the total number of words in this article
+    return article.body.split(' ').length;
+  // Get the total number of words in this article
   })
-  .reduce(function(a, b) {
-    return // Sum up all the values in the collection
-  })
+   .reduce(function(a, b) {
+     return a + b; // Sum up all the values in the collection
+   });
 };
 
 // TODO: Chain together a `map` and a `reduce` call to produce an array of unique author names.
 Article.allAuthors = function() {
-  return // Don't forget to read the docs on map and reduce!
+  return Article.all.map(function(article) {
+    return article.author // Don't forget to read the docs on map and reduce!
+  })
+   .reduce(function(a, b) {
+     if (a.indexOf(b) < 0) {
+       a.push(b);
+     }
+      return a;
+     }, []);
 };
 
 Article.numWordsByAuthor = function() {
   // TODO: Transform each author string into an object with 2 properties: One for
   // the author's name, and one for the total number of words across all articles written by the specified author.
-  return Article.allAuthors().map(function(author) {
-    return {
-      // someKey: someValOrFunctionCall().map(...).reduce(...), ...
-    }
-  })
+   return Article.allAuthors().map(function(author) {
+     return {
+       authorName: author,
+       authorWordCount: Article.all.reduce(function(a, b) {
+         if (b.author === author) {
+           a.push(b.body.split(' ').length)
+         }
+          return a;
+        },[]).reduce(function(a,b) {
+          return a + b;
+        })
+  //     // someKey: someValOrFunctionCall().map(...).reduce(...), ...
+     }
+})
 };
+
+//step by step of numWordsByAuthor:
+//return the array of authors with the allAuthors() method, and create a new
+//object with the .map method to make an object with two properties.
+//The first property is the author name, which happens to be the parameter
+//the second property is a doosy. The second property is the word count Which
+//is obtained by grabbing all the articles with the Article.all array and running
+//a reduce method which takes two parameters. remember: a is the counter Which
+//defaults at zero unless specified otherwise at the end of the method. b is The
+//instance within the array being iterated through. if the author on the instance
+//of that article equals the author (parameter), then push the number of words to
+//an empty array which is a (defined before the second reduce). Then you have an
+//array of articles for each article with the word count for each article.
+//Then take that array of values and add together all the values to make one values
+//(not an array).
+
+module.Article = Article;
+
+ })(window);

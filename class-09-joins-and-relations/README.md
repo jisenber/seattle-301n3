@@ -21,3 +21,8 @@ Reverse a string
   function reverseStr(str) {
     //given a string, return the reverse.
   }
+
+# Class Videos
+- [Part 1](https://youtu.be/UbyCcPwovj8)
+- [Part 2](https://youtu.be/mlBTvaMUPdI)
+- [Part 3](https://youtu.be/NACbrtNQIFo)

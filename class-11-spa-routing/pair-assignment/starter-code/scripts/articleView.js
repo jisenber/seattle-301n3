@@ -50,14 +50,6 @@
 
   // TODO: Once the routes are handling "/" and "/about", we can delete this handleMainNav function. YESSSS!
   // TODO: Remeber to also remove any calls to this function, wherever they may originate!
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
-  };
 
   articleView.toggleNavDisplay = function() {
     $('.icon-menu').on('click', function(e) {
@@ -118,7 +110,6 @@
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    articleView.handleMainNav();
     articleView.toggleNavDisplay();
     articleView.setTeasers();
   };

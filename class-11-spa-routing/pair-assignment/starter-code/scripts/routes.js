@@ -3,11 +3,11 @@
 
 // TODO: What function do you call to activate page.js? Fire it off now, to execute!
 
-page('/', index);
-// page('/:about', about);
-// page('/:new', new);
-page('*', notfound);
-page();
+(function(module) {
+  page('/', articlesController.index );
+  page('/about', aboutController.index);
+  // page('/:new', new);
+  page('*', notfound);
+  page();
 
-articleController.index();
-aboutController.index();
+});

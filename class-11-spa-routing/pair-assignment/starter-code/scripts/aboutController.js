@@ -8,6 +8,6 @@
       $('#about').show();
     });
   };
-  
+
   module.aboutController = aboutController;
 })(window);

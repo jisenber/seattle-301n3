@@ -9,10 +9,8 @@
   articlesController.index = function() {
     Article.createTable();
     Article.fetchAll(articleView.initIndexPage);
-    $('.icon-home').on('click', function() {
-      $('#about').hide();
-      $('#articles').show();
-    });
+    $('#about').hide();
+    $('#articles').show(); //WOW, megan... what a brilliant mind.
   };
 
   module.articlesController = articlesController;

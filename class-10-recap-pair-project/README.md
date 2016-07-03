@@ -35,3 +35,10 @@ Write your own user stories as you explore the new code base.
  - Make the site responsive, for mobile and desktop.
  - Persist any user-generated data and user selections.
  - Use AJAX to load any significant data sources.  - Cache data where appropriate.
+
+ ## Class Videos
+ [Part 1](https://youtu.be/HZOfogGD8GU)
+
+ [Part 2](https://youtu.be/8VPmsimv7xI)
+
+ [Part 3](https://youtu.be/RCS2vHOZiWk)

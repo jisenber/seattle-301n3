@@ -1,5 +1,8 @@
 /* TODO: Add some coordinated colors to make the blog more distinguished:
          Use an accent color for all links, and remove their underline. */
+html {
+  max-width: 960px;
+}
 
 body {
   line-height: 1.5;
@@ -10,12 +13,14 @@ body {
 hr {
   margin: 1em;
   width: 80%;
+  color: #b6b6b6;
 }
 
 /*TEXT STYLES
 =======================================*/
 p {
   font-size: 1em;
+  color: #212121;
 }
 
 address {
@@ -27,6 +32,8 @@ address {
 
 a, a:link, a:active {
   color: #777;
+  text-decoration: none;
+  color: #FFC107;
 }
 
 a:hover, a:focus {
@@ -34,3 +41,13 @@ a:hover, a:focus {
 
 a:visited {
 }
+
+/*
+whiteFFF
+blue: primary: 2196F3
+accent: #FFC107
+primary text: blackish: 212121
+secondary text: #727272
+hr: b6b6b6
+background for articles: bbdefb
+*/

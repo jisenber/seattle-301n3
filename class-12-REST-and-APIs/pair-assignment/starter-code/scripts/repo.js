@@ -5,9 +5,9 @@
 
   repos.requestRepos = function(callback) {
     $.ajax({
-      url: 'https://api.github.com/users/njisaf/repos' + '?per_page=10&sort=updated',
+      url: 'https://api.github.com/users/njisaf/repos?per_page=10&sort=updated',
       type: 'GET',
-      headers: {'authorization': 'token 1174020314bd344970d57126d270df7af1995bcf'},
+      headers: {'authorization': 'token ' + githubToken},
       success: function(data) {
         data.forEach(function(ele) {
           console.log(ele);

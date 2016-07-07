@@ -10,7 +10,7 @@
       headers: {'authorization': 'token ' + githubToken},
       success: function(data) {
         data.forEach(function(ele) {
-          console.log(ele);
+          repos.all.push(ele);
         });
       }
     });

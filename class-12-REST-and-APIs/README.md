@@ -54,3 +54,7 @@ The uniform interface constraint is fundamental to the design of any REST servic
 
 ## Helpful resources
 -
+
+## Class Videos
+[Part 1](https://youtu.be/hlEgqu59iAw)
+[Part 2](https://youtu.be/OnP9MxJ0Ofc)

@@ -13,7 +13,11 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  //Jacob Driving This method is invoked as part of the articleView.index function which is the last callback function run when the user nagivates to any route on the page. Article.allAuthors() and Article.allCategories() are arrays of all the authors and all the article categories respectively.These arrays are created in the article.js file. This function takes the data from those arrays and appends them to the DOM within the dropdown filters. 
+<<<<<<< HEAD
+  //Jacob Driving This method is invoked as part of the articleView.index function which is the last callback function run when the user nagivates to any route on the page. Article.allAuthors() and Article.allCategories() are arrays of all the authors and all the article categories respectively.These arrays are created in the article.js file. This function takes the data from those arrays and appends them to the DOM within the dropdown filters.
+=======
+  //Jacob Driving This method is invoked as part of the articleView.index function which is the last callback function run when the user nagivates to any route on the page. Article.allAuthors() and Article.allCategories() are arrays of all the authors and all the article categories respectively.These arrays are created in the article.js file. This function takes the data from those arrays and appends them to the DOM within the dropdown filters.
+>>>>>>> b42863749a436952bd43e23fa642136b9833ee6d
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
@@ -39,6 +43,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //Nassir Driving: We thought this method was broken! But .one() is like .on() but only happens once for each element. This is invoked by articleView.index. This takes the id of whatever filter is selected and, ONLY ONCE EACH TIME, and replaces the "-filter" part of the id string with a blank space. It then creates a string using that value, replacing the whitespace with a "+" symbol, and adds to the url and navigates you to that page.
+
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       resource = this.id.replace('-filter', '');
@@ -125,7 +131,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  //Jacob Driving: This method is run after the completion of the first callback functions that are invoked when the user nagivates to any route on the page. This method will take the data that is extracted following the first callback function and will render it on the page by appending the property values of the articles object to the #articles element on the HTML page. The properties of the articles object are redefined every time the user navigates to a new route.
+  //Jacob Driving: This method is invoked by articlesController.index, which is invoked after the completion of the first callback functions that are invoked when the user nagivates to any route on the page. This method will take the data that is extracted following the first callback function and will render it on the page by appending the property values of the articles object to the #articles element on the HTML page. The properties of the articles object are redefined every time the user navigates to a new route.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
@@ -136,6 +142,7 @@
 
     articleView.populateFilters();
     // COMMENT: What does this method do?  What is it's execution path?
+    //Nassir: Pretty sure this is not meant to be here. Explanations of each function are at their functions.
     articleView.handleFilters();
 
     // DONE: Replace setTeasers with just the truncation logic, if needed:

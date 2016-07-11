@@ -13,11 +13,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-<<<<<<< HEAD
   //Jacob Driving This method is invoked as part of the articleView.index function which is the last callback function run when the user nagivates to any route on the page. Article.allAuthors() and Article.allCategories() are arrays of all the authors and all the article categories respectively.These arrays are created in the article.js file. This function takes the data from those arrays and appends them to the DOM within the dropdown filters.
-=======
-  //Jacob Driving This method is invoked as part of the articleView.index function which is the last callback function run when the user nagivates to any route on the page. Article.allAuthors() and Article.allCategories() are arrays of all the authors and all the article categories respectively.These arrays are created in the article.js file. This function takes the data from those arrays and appends them to the DOM within the dropdown filters.
->>>>>>> b42863749a436952bd43e23fa642136b9833ee6d
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
